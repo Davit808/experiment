@@ -15,5 +15,12 @@ public class Main {
         int xx = (int)x;
         int yy = (int)y;
         System.out.println("the sum of the whole parts " + (xx + yy));
+
+        System.out.println("------------ part 3 -------------");
+
+
+        double d1 = 34.654;
+        System.out.println((float)(d1-(int)d1));
+
     }
 }
