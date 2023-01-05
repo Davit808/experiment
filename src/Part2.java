@@ -44,6 +44,7 @@ public class Part2 {
                 break;
             default:
                 System.out.println("Year is not have a Month in " + i);
+
         }
 
     }
