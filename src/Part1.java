@@ -12,5 +12,6 @@ public class Part1 {
         } else {
             System.out.println("You can't the construct a triangle the " + ab + " " + bc + " " + ac + " length");
         }
+
     }
 }
