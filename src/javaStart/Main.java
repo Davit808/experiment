@@ -1,3 +1,5 @@
+package javaStart;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("------------ part 1 -------------");

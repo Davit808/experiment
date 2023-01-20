@@ -1,3 +1,5 @@
+package javaStart;
+
 public class charArray {
     public static void main(String[] args) {
         char[] text = {'h', 'e', 'l', 'l', 'o', ' ', 'b', 'r', 'o'};

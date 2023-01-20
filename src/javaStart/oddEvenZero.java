@@ -1,3 +1,5 @@
+package javaStart;
+
 public class oddEvenZero {
     public static void main(String[] args) {
         double[] first = {7, 3, 1, -2, 8, 22, 13, -1};

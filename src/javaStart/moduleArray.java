@@ -1,3 +1,5 @@
+package javaStart;
+
 public class moduleArray {
     public static void main(String[] args) {
         int[] array = {-6, 2, 11, 6, -21, 9};

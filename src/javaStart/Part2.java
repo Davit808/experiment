@@ -1,3 +1,5 @@
+package javaStart;
+
 import java.util.Scanner;
 
 public class Part2 {

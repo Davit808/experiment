@@ -1,3 +1,5 @@
+package javaStart;
+
 public class doubleArray {
     public static void main(String[] args) {
        double[] a = {-1, -4, 7, -2, 9};
