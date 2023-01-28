@@ -8,15 +8,15 @@ public class PrintThePowerOfNumbers {
         System.out.println("Enter the valid numbers a for 1..10 and b for -10..10");
         int a = numbers.nextInt();
         int b = numbers.nextInt();
-        double c = printThePowerOfNumbers(a, b);
-       if(c >= 1 || c < 0) {
-           switch ((int)c) {
+        double result = printThePowerOfNumbers(a, b);
+       if(result >= 1 || result < 0) {
+           switch ((int)result) {
                case -1 -> System.out.println("Enter the correct number for a 1-10 and for b -10 .. 10");
                case -2 -> System.out.println("Enter the correct number for a 1 .. 10");
-               default -> System.out.println((int)c);
+               default -> System.out.println((int)result);
            }
        } else {
-           System.out.printf("%." + b * -1 + "f\n",c);
+           System.out.printf("%." + b * -1 + "f\n",result);
        }
     }
     public static double printThePowerOfNumbers(int a, int b) {
