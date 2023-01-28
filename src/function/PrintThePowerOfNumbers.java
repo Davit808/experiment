@@ -9,7 +9,6 @@ public class PrintThePowerOfNumbers {
         int a = numbers.nextInt();
         int b = numbers.nextInt();
         double c = printThePowerOfNumbers(a, b);
-        //System.out.println(c); 10.000.000.000
        if(c >= 1 || c < 0) {
            switch ((int)c) {
                case -1 -> System.out.println("Enter the correct number for a 1-10 and for b -10 .. 10");
