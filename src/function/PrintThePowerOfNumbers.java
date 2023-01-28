@@ -22,26 +22,24 @@ public class PrintThePowerOfNumbers {
 
     public static double printThePowerOfNumbers(int a, int b) {
         double power = 1;
-        if (a < 1 && a > -11) {
+       if (a < 1 && a > -11) {
             return -2;
         } else if (a > 10 || b > 10 || a < -10 || b < -10 ) {          // a * -1 > 10 || b * -1 > 10 whit module a or b
             return -1;
         }
-        if (a >= 1 && b <= 0) {
+        if ( b < 0) {
             while (b < 0) {
                 power = power * a;
                 b++;
             }
             return 1 / power;
-        } else if (a >= 1 && b >= 0) {
+        } else if (b > 0){
             while (b > 0) {
                 power = power * a;
                 b--;
             }
             return power;
         }
-
         return 1;
     }
-
 }
