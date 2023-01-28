@@ -1,4 +1,4 @@
-package Arrays;
+package Loops;
 
 public class binaryDecimal {
     public static void main(String[] args) {
