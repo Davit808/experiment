@@ -9,37 +9,45 @@ public class PrintThePowerOfNumbers {
         int a = numbers.nextInt();
         int b = numbers.nextInt();
         double result = printThePowerOfNumbers(a, b);
-        if (result >= 1 || result < 0) {
+        if (result < 0) {
             switch ((int) result) {
                 case -1 -> System.out.println("Enter the correct number for a 1-10 and for b -10 .. 10");
                 case -2 -> System.out.println("Enter the correct number for a 1 .. 10");
-                default -> System.out.println((long) result);
             }
-        } else {
+        } else if (result > 0 && result < 1) {
             System.out.printf("%." + b * -1 + "f\n", result);
+        } else {
+            System.out.println((long) result);
         }
     }
 
     public static double printThePowerOfNumbers(int a, int b) {
-        double power = 1;
-       if (a < 1 && a > -11) {
+        if (a < 1 && a > -11) {
             return -2;
-        } else if (a > 10 || b > 10 || a < -10 || b < -10 ) {          // a * -1 > 10 || b * -1 > 10 whit module a or b
+        } else if (a > 10 || b > 10 || a < -10 || b < -10) {
             return -1;
         }
-        if ( b < 0) {
-            while (b < 0) {
-                power = power * a;
-                b++;
-            }
-            return 1 / power;
-        } else if (b > 0){
-            while (b > 0) {
-                power = power * a;
-                b--;
-            }
+        double power = 1;
+        if (b < 0) {
+            int module = returnModuleOfNumber(b);
+            power = 1 / returnThePowerNumber(a, module, power);
             return power;
         }
-        return 1;
+        return returnThePowerNumber(a, b, power);
+    }
+
+    public static int returnModuleOfNumber(int b) {
+        if (b < 0) {
+            b = -1 * b;
+        }
+        return b;
+    }
+
+    public static double returnThePowerNumber(int a, int b, double c) {
+        while (b > 0) {
+            c = c * a;
+            b--;
+        }
+        return c;
     }
 }
