@@ -27,27 +27,22 @@ public class PrintThePowerOfNumbers {
         } else if (a > 10 || b > 10 || a < -10 || b < -10) {
             return -1;
         }
-        double power = 1;
+        double power;
         if (b < 0) {
-            int module = returnModuleOfNumber(b);
-            power = 1 / returnThePowerNumber(a, module, power);
+            b = b * -1;
+            power = 1 / returnThePowerNumber(a, b);
             return power;
         }
-        return returnThePowerNumber(a, b, power);
+        power = returnThePowerNumber(a, b);
+        return power;
     }
 
-    public static int returnModuleOfNumber(int b) {
-        if (b < 0) {
-            b = -1 * b;
-        }
-        return b;
-    }
-
-    public static double returnThePowerNumber(int a, int b, double c) {
+    public static double returnThePowerNumber(int a, int b) {
+        double power = 1;
         while (b > 0) {
-            c = c * a;
+            power = power * a;
             b--;
         }
-        return c;
+        return power;
     }
 }
