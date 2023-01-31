@@ -14,7 +14,7 @@ public class PrintThePowerOfNumbers {
                 case -1 -> System.out.println("Enter the correct number for a 1-10 and for b -10 .. 10");
                 case -2 -> System.out.println("Enter the correct number for a 1 .. 10");
             }
-        } else if (result > 0 && result < 1) {
+        } else if (result < 1) {
             System.out.printf("%." + b * -1 + "f\n", result);
         } else {
             System.out.println((long) result);
