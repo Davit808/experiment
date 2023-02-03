@@ -2,26 +2,24 @@ package function;
 
 public class numberIsArmstrong {
     public static void main(String[] args) {
-        int number = 15;
-        int degree = lengthOfNumber(number); // 3
-        int index = degreeOfIndexForNumber(10, degree - 1); //100
-        System.out.println(result(number, index, degree));
+        int number = 5488346;
+        System.out.println(result(number));
     }
 
-    static boolean result(int number, int index, int degree) {
+    static boolean result(int number) {
         boolean result = true;
-        int compare = number;
+        int degree = lengthOfNumber(number);
+        int index = degreeOfIndexForNumber(10, degree - 1);
+        int valueForCompare = number;
         int totalSum = 0;
-        for (int i = degree, sum; i > 0; i--) {
+        for (int i = degree, valueDegree; i > 0; i--) {
             int a = number / index;
-            do {
-                sum = degreeOfIndexForNumber(a, degree);
-            } while (false);
-            totalSum += sum;
+            valueDegree = degreeOfIndexForNumber(a, degree);
+            totalSum += valueDegree;
             number = number - a * index;
             index = index / 10;
         }
-        if (totalSum != compare) {
+        if (totalSum != valueForCompare) {
             return false;
         }
         return result;
@@ -37,9 +35,8 @@ public class numberIsArmstrong {
 
     static int lengthOfNumber(int number) {
         int sum = 0;
-        for (int i = 1; number / i > 0; i *= 10) {
+        for (int i = 1; i < number; i *= 10) {
             sum++;
-            continue;
         }
         return sum;
     }
