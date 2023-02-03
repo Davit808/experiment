@@ -8,24 +8,23 @@ public class PrintThePowerOfNumbers {
         System.out.println("Enter the valid numbers a for 1..10 and b for -10..10");
         int a = numbers.nextInt();
         int b = numbers.nextInt();
-        double result = printThePowerOfNumbers(a, b);
-        if (result < 0) {
-            switch ((int) result) {
+        if (printThePowerOfNumbers(a, b) < 0) {
+            switch ((int) printThePowerOfNumbers(a, b)) {
                 case -1 -> System.out.println("Enter the correct number for a 1-10 and for b -10 .. 10");
                 case -2 -> System.out.println("Enter the correct number for a 1 .. 10");
             }
-        } else if (result < 1) {
-            System.out.printf("%." + b * -1 + "f\n", result);
+        } else if (printThePowerOfNumbers(a, b) < 1) {
+            System.out.printf("%." + b * -1 + "f\n", printThePowerOfNumbers(a, b));
         } else {
-            System.out.println((long) result);
+            System.out.println((long) printThePowerOfNumbers(a, b));
         }
     }
 
-    public static double printThePowerOfNumbers(int a, int b) {
-        if (a < 1 && a > -11) {
-            return -2;
-        } else if (a > 10 || b > 10 || a < -10 || b < -10) {
+    static double printThePowerOfNumbers(int a, int b) {
+        if (abc(a) > 10 || abc(b) > 10) {
             return -1;
+        } else if (a < 1) {
+            return -2;
         }
         double power;
         if (b < 0) {
@@ -37,12 +36,22 @@ public class PrintThePowerOfNumbers {
         return power;
     }
 
-    public static double returnThePowerNumber(int a, int b) {
+    static double returnThePowerNumber(int a, int b) {
         double power = 1;
         while (b > 0) {
             power = power * a;
             b--;
         }
         return power;
+    }
+
+    static int abc(int... a) {
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] < 0) {
+                a[i] = -1 * a[i];
+            }
+            return a[i];
+        }
+        return 808;
     }
 }
