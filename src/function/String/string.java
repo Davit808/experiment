@@ -40,7 +40,7 @@ public class string {
             } else if (s.length() > 6) {
                 s = s.substring(0, 6);
             }
-            if("string".equals(s) == true){
+            if("string".equals(s)){
                 sum++;
             }
         }
