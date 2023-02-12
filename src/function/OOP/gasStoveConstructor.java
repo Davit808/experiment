@@ -5,10 +5,8 @@ public class gasStoveConstructor {
     int elEye1, elEye2;
     int totalEnergy;
     gasStoveConstructor(boolean p1, boolean p2){
-        boolean playElectric;
-        boolean playGas;
-        playElectric = p1;
-        playGas = p2;
+        boolean playElectric = p1;
+        boolean playGas = p2;
         if (p1){
             elEye1 = elEye2 = 100;
         }
