@@ -21,9 +21,11 @@ public class Stove {
             this.gasEye = amount;
         }
     }
+
     public int getGasEye() {
         return this.gasEye;
     }
+
     public void setElEye(int amount) {
         if (amount < 1) {
             this.elEye = 1;
@@ -33,30 +35,37 @@ public class Stove {
             this.elEye = amount;
         }
     }
+
     public int getElEye() {
         return this.elEye;
     }
+
     public void setGasEnergy(boolean play) {
         if (play) {
             this.gasEnergy = this.gasEye * 80;
         }
         this.totalEnergy += this.gasEnergy;
     }
+
     public int getGasEnergy() {
         return this.gasEnergy;
     }
+
     public void setElEnergy(boolean play) {
         if (play) {
             this.elEnergy = this.elEye * 100;
         }
         this.totalEnergy += this.elEnergy;
     }
+
     public int getElEnergy() {
         return this.elEnergy;
     }
+
     public int getTotalEnergy() {
         return this.totalEnergy;
     }
+
     public static void main(String[] args) {
         Stove gs1 = new Stove(3, 1);
         gs1.setGasEnergy(false);
