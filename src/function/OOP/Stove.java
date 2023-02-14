@@ -35,7 +35,6 @@ public class Stove {
             this.elEye = amount;
         }
     }
-
     public int getElEye() {
         return this.elEye;
     }
