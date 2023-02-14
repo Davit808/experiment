@@ -1,4 +1,4 @@
-package function;
+package function.String;
 
 public class numberIsArmstrong {
     public static void main(String[] args) {

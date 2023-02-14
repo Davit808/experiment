@@ -1,4 +1,4 @@
-package function;
+package function.String;
 
 public class charToInt {
     static int[] charArrayToIntArray(char[] array) {
