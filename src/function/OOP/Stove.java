@@ -67,6 +67,10 @@ public class Stove {
 
     public static void main(String[] args) {
         Stove gs1 = new Stove(3, 1);
+        gs1.setGasEnergy(true);
+        gs1.setElEnergy(true);
+        System.out.println("amount gas eyes for gs1 is " + gs1.gasEye + " and " + "amount electric eyes for gs1 is " + gs1.elEye);
+        System.out.println("gas energy is " + gs1.gasEnergy + " " + "electric energy is " + gs1.elEnergy + " total energy for gas stove is " + gs1.totalEnergy);
         gs1.setGasEnergy(false);
         gs1.setElEnergy(false);
         System.out.println("amount gas eyes for gs1 is " + gs1.gasEye + " and " + "amount electric eyes for gs1 is " + gs1.elEye);
