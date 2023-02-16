@@ -22,6 +22,6 @@ public class District {
     }
 
     public double getResult() {
-        return (double) result;
+        return  result;
     }
 }
