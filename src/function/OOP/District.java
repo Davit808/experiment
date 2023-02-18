@@ -1,27 +1,34 @@
 package function.OOP;
 
+import java.util.Objects;
+
 public class District {
-    private int areaOfTheGarden;
-    private int sumAllBuildingOfRooms;
+    private double gardenArea;
+    private Building[] infoOfBuildings;
     private double result;
-
-    District(int garden, int... sumOfThisBuilding) {
-        areaOfTheGarden = garden;
-        for (int i : sumOfThisBuilding) {
-            sumAllBuildingOfRooms += i;
-        }
-        result = 1.0 * areaOfTheGarden / sumAllBuildingOfRooms;
+    District( Building[] buildings, double garden){
+        gardenArea = garden;
+        infoOfBuildings = buildings;
+        result = resultGardenArea();
     }
 
-    public int getAreaOfTheGarden() {
-        return areaOfTheGarden;
+    public Building[] getInfoOfBuildings() {
+        return infoOfBuildings;
     }
 
-    public int getSumAllBuildingOfRooms() {
-        return sumAllBuildingOfRooms;
+    public double getGardenArea() {
+        return gardenArea;
     }
 
     public double getResult() {
-        return  result;
+        return result;
+    }
+
+    private double resultGardenArea(){
+        double sum = 0.0;
+        for(int i = 0; i < infoOfBuildings.length; i++){
+            sum += infoOfBuildings[i].getTotalRooms();
+        }
+        return gardenArea / sum;
     }
 }

@@ -1,21 +1,26 @@
 package function.OOP;
 
 public class Building {
-    private String typeOfBuilding;
     private int amountOfFloors;
-    private int amountOfTwoRooms;
-    private int amountOfThreeRoms;
-    private int sumOfRooms;
+    private int[] numbersTwoRooms;
+    private int[] numbersThreeRooms;
+    private String typeOfBuilding;
+    private int totalRooms;
 
-    Building(String type, int amountOfFloors, int amountOfTwoRooms, int amountOfThreeRoms) {
-        this.amountOfFloors = amountOfFloors;
-        this.amountOfTwoRooms = amountOfTwoRooms;
-        this.amountOfThreeRoms = amountOfThreeRoms;
-        sumOfRooms = amountOfTwoRooms + amountOfThreeRoms;
-        if (type == "panel" || type == "monolithic") {
-            typeOfBuilding = type;
+    Building(int floors, int[] twoRooms, int[] threeRooms, String type) {
+        amountOfFloors = floors;
+        typeOfBuilding = type;
+        setNumbersTwoRooms(twoRooms);
+        setNumbersThreeRooms(threeRooms);
+        totalRooms = sumOfAllRooms();
+    }
+
+    public void setAmountOfFloors(int amount) {
+        if (amount < 1) {
+            System.out.println("You can't enter this amount of floors");
+            System.exit(1);
         } else {
-            System.out.println("You can't enter this " + type + " type" + "\nEnter the valid type");
+            this.amountOfFloors = amount;
         }
     }
 
@@ -23,20 +28,56 @@ public class Building {
         return amountOfFloors;
     }
 
-    public int getAmountOfTwoRooms() {
-        return amountOfTwoRooms;
+    public void setNumbersTwoRooms(int[] twoRooms) {
+        for (int i : twoRooms) {
+            if (i < 0) {
+                System.out.println("You can't enter this number of room");
+                System.exit(1);
+            } else {
+                this.numbersTwoRooms = twoRooms;
+            }
+        }
     }
 
-    public int getAmountOfThreeRoms() {
-        return amountOfThreeRoms;
+    public int[] getNumbersTwoRooms() {
+        return numbersTwoRooms;
     }
 
-    public int getSumOfRooms() {
-        return sumOfRooms;
+    public void setNumbersThreeRooms(int...threeRooms) {
+        for (int i : threeRooms) {
+            if (i < 0) {
+                System.out.println("You can't enter this number of room");
+                System.exit(1);
+            } else {
+                this.numbersThreeRooms = threeRooms;
+            }
+        }
+    }
+
+    public int[] getNumbersThreeRooms() {
+        return numbersThreeRooms;
+    }
+
+    public String setTypeOfBuilding(String type) {
+        if (type == "panel" || type == "monolithic") {
+            this.typeOfBuilding = type;
+        } else {
+            System.out.println("You can't enter this type");
+            System.exit(1);
+        }
+        return typeOfBuilding;
     }
 
     public String getTypeOfBuilding() {
         return typeOfBuilding;
     }
 
+    private int sumOfAllRooms() {
+        int sum = numbersTwoRooms.length + numbersThreeRooms.length;
+        return sum;
+    }
+
+    public int getTotalRooms() {
+        return totalRooms;
+    }
 }
