@@ -2,19 +2,47 @@ package function.OOP;
 
 public class Main {
     public static void main(String[] args) {
-        Building b1 = new Building("panel", 5, 10, 3);
-        Building b2 = new Building("panel", 6, 12, 5);
-        Building b3 = new Building("monolithic", 9, 25, 10);
-        Building b4 = new Building("monolithic", 3, 6, 6);
-        District center = new District(1000, b1.getSumOfRooms(), b2.getSumOfRooms(), b3.getSumOfRooms(), b4.getSumOfRooms());
-        System.out.println(center.getSumAllBuildingOfRooms());
-        System.out.println(center.getResult());
+        Building b1 = new Building(3, new int[]{1, 2, 3, 5, 6, 7, 9, 10, 11}, new int[]{4, 8, 12}, "panel");
+        Building b2 = new Building(5, new int[]{2, 3, 5, 6, 8, 9, 11, 12, 14, 15}, new int[]{1, 4, 7, 10, 13}, "monolithic");
+        Building b3 = b1;
+        Building b4 = b2;
 
-        Sportsman human1 = new Sportsman("Muhammad Ali", 45, 98, 95, 120, 95, 50);
-        Sportsman human2 = new Sportsman("Mike Tyson", 65, 85, 93, 70, 90, 99);
-        System.out.println(human1.getResult());
-        System.out.println(human2.getResult());
-        Comparison returnH1VSH2 = new Comparison(human1.getResult(), human2.getResult());
-        System.out.println(returnH1VSH2.getCompareTheResults());
+        District Center = new District(new Building[]{b1, b2, b3, b4}, 1000);
+        System.out.println(Center.getResult());
+        System.out.println();
+        Sportsman s1 = new Sportsman("John Dou - 1", new int[]{78, 65, 93, 98, 42, 120});
+        Sportsman s2 = new Sportsman("John Dou - 2", new int[]{58, 33, 80, 123, 32, 94, 78});
+        Sportsman s3 = new Sportsman("John Dou - 3", new int[]{65, 32, 100, 70});
+        Sportsman s4 = new Sportsman("John Dou - 4", new int[]{93, 33, 87, 123, 100, 96, 78});
+
+        System.out.println(s1.resultThisAndAnotherSportsman(s2));
+        System.out.println(s2.resultThisAndAnotherSportsman(s1));
+        System.out.println(s3.resultThisAndAnotherSportsman(s2));
+        System.out.println();
+        System.out.println(greatestCommonDivisor(s1.getCompetitionResults()));
+        System.out.println(greatestCommonDivisor(s2.getCompetitionResults()));
+        System.out.println(greatestCommonDivisor(s3.getCompetitionResults()));
+        System.out.println(greatestCommonDivisor(s4.getCompetitionResults()));
+
+    }
+
+    static int greatestCommonDivisor(int[] arr) {
+        int x = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (x > arr[i]) {
+                x = arr[i];
+            }
+        }
+        int result = 1;
+        for (int i = 2; i <= x; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[j] % i != 0) {
+                    break;
+                } else if (j == arr.length - 1) {
+                    result = i;
+                }
+            }
+        }
+        return result;
     }
 }
