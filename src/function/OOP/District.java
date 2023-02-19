@@ -6,7 +6,8 @@ public class District {
     private double gardenArea;
     private Building[] infoOfBuildings;
     private double result;
-    District( Building[] buildings, double garden){
+
+    District(Building[] buildings, double garden) {
         gardenArea = garden;
         infoOfBuildings = buildings;
         result = resultGardenArea();
@@ -24,9 +25,9 @@ public class District {
         return result;
     }
 
-    private double resultGardenArea(){
+    private double resultGardenArea() {
         double sum = 0.0;
-        for(int i = 0; i < infoOfBuildings.length; i++){
+        for (int i = 0; i < infoOfBuildings.length; i++) {
             sum += infoOfBuildings[i].getTotalRooms();
         }
         return gardenArea / sum;
