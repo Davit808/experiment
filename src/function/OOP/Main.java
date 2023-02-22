@@ -8,8 +8,9 @@ public class Main {
         Building b4 = b2;
 
         District Center = new District(new Building[]{b1, b2, b3, b4}, 1000);
+        String resultOfArea = String.format("Value of area for each house is %5.3f", Center.getResult());
+        System.out.println(resultOfArea);
         System.out.println(Center.getResult());
-        System.out.println();
         Sportsman s1 = new Sportsman("John Dou - 1", new int[]{78, 65, 93, 98, 42, 120});
         Sportsman s2 = new Sportsman("John Dou - 2", new int[]{58, 33, 80, 123, 32, 94, 78});
         Sportsman s3 = new Sportsman("John Dou - 3", new int[]{65, 32, 100, 70});
@@ -19,30 +20,46 @@ public class Main {
         System.out.println(s2.resultThisAndAnotherSportsman(s1));
         System.out.println(s3.resultThisAndAnotherSportsman(s2));
         System.out.println();
-        System.out.println(greatestCommonDivisor(s1.getCompetitionResults()));
-        System.out.println(greatestCommonDivisor(s2.getCompetitionResults()));
-        System.out.println(greatestCommonDivisor(s3.getCompetitionResults()));
-        System.out.println(greatestCommonDivisor(s4.getCompetitionResults()));
-
+        int[] array1 = {93, 33, 87, 123, 100, 96, 78};
+        int[] array2 = {-50, 120, 100, -45, 75};
+        int[] array3 = {-52, 120, 98, -46, 88};
+        System.out.println(greatestCommonDivisor(array1));
+        System.out.println(greatestCommonDivisor(array2));
+        System.out.println(greatestCommonDivisor(array3));
     }
 
     static int greatestCommonDivisor(int[] arr) {
-        int x = arr[0];
-        for (int i = 0; i < arr.length; i++) {
-            if (x > arr[i]) {
-                x = arr[i];
+        int x;
+        if (arr[0] > 0){
+            x = arr[0];
+        } else x = arr[0] * -1;
+        for (int i = 1; i < arr.length; i++) {
+            int moduleArrValue;
+            if (arr[i] < 0) {
+                moduleArrValue = arr[i] * -1;
+            } else {
+                moduleArrValue = arr[i];
+            }
+            if(x > moduleArrValue){
+                x = moduleArrValue;
             }
         }
         int result = 1;
-        for (int i = 2; i <= x; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[j] % i != 0) {
-                    break;
-                } else if (j == arr.length - 1) {
-                    result = i;
+        int theSmallestDivisor;
+        if (x % 2 == 0){
+            theSmallestDivisor = 2;
+        } else {
+            theSmallestDivisor = 1;
+        }
+            for (int i = theSmallestDivisor; i <= x; i += 2) {
+                for (int j = 0; j < arr.length; j++) {
+                    if (arr[j] % i != 0) {
+                        break;
+                    } else if (j == arr.length - 1) {
+                        result = i;
+                    }
                 }
             }
-        }
         return result;
     }
 }
