@@ -1,4 +1,4 @@
-package function.OOP;
+package OOP;
 
 public class Building {
     private int amountOfFloors;

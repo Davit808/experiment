@@ -1,6 +1,4 @@
-package function.OOP;
-
-import java.util.Objects;
+package OOP;
 
 public class District {
     private double gardenArea;
