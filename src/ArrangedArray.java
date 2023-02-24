@@ -1,6 +1,6 @@
 public class ArrangedArray {
     public static void main(String[] args) {
-        int[] array4 = {5, -23, 12, 5, 12, -23, 5, -23};
+        int[] array4 = {5, -23, 12, 12, 5, 12, -23, 5, -23};
         for (int i = 0, j = 0, k = array4.length - 1; i < array4.length; i++) {
             int x = array4[i];
             int y;
@@ -39,5 +39,4 @@ public class ArrangedArray {
         }
     }
 
-}
 }
