@@ -8,7 +8,7 @@ public class ToReverseTheString {
         System.out.println(original);
         System.out.println(toReverseTheStringForCharMethod(original));
     }
-    public static String toReversTheString(String str){
+     static String toReversTheString(String str){
         String[] aaa = str.split(" ");
         for (int i = 0, j = aaa.length-1 ; i < aaa.length/2; i++) {
             String memoryStart = aaa[j];
@@ -36,7 +36,7 @@ public class ToReverseTheString {
          }
          return str;
     }
-    public static String toReverseTheStringForCharMethod(String Str){
+     static String toReverseTheStringForCharMethod(String Str){
         char[] memory = Str.toCharArray();
         for (int i = 0, j = memory.length-1; i < memory.length; i++) {
             char first = memory[i];
