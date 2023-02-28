@@ -1,10 +1,12 @@
 package OOP;
 
 public class SoccerPlayer {
-   public final String name;
-   public final String lastname;
-   public final String nationality;
-   public final String position;
+   private  String name;
+   private  String lastname;
+   private  String nationality;
+   private  String position;
+
+
     SoccerPlayer(String n, String ln, String na, String p){
         name = n;
         lastname = ln;
