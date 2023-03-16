@@ -4,9 +4,9 @@ public class Employee extends Person {
     private String specialization;
     private int salary;
 
-    Employee(String n, String s, int a, String ad, long pN, String sn, int salary) {
-        super(n, s, a, ad, pN);
-        specialization = sn;
+    Employee(String name, String surname, int age, String address, long phoneNumber, String specialization, int salary) {
+        super(name, surname, age, address, phoneNumber);
+        this.specialization = specialization;
         setSalary(salary);
     }
 
