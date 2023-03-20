@@ -2,13 +2,18 @@ package OOP.Expands;
 
 public class Main {
     public static void main(String[] args) {
-        Person p1 = new Person("Davit", "Arzumanyan", 30, "HH, Syunik, Goris, Verishen", 37477123456l);
-        System.out.println("Address of " + p1.getName() + " is " + p1.getAddress());
-        Employee e1 = new Employee("Armen", "Aramyan", 25, "HH, Syunik, Goris", 37499123456l, "Project manager", 5000);
-        System.out.println(e1.getSpecialization() + " " + "Salary is " + e1.getSalary() + "$");
-        e1.setSalary(3000);
-        System.out.println(e1.getSpecialization() + " " + "Salary is " + e1.getSalary() + "$");
-        Manager m1 = new Manager("Poxos", "Poxosyan", 30, "USE, Lndon", 10055123456l, "Manajer of testing", 6500, "Automation testing");
-        System.out.println(m1.getDepartment());
+        StandardCard sc1 = new StandardCard("Davit", "Arzumanyan", "HH, Syuniq", 10000000);
+        GoldCard gc1 = new GoldCard("Davit", "Arzumanyan", "HH, Syuniq", 100000000);
+        System.out.println(gc1.getAllowanceForLaunch());
+        gc1.setOutputForLaunch(2000);
+        System.out.println(gc1.getAllowanceForLaunch());
+        System.out.println(gc1.getSumOfAccount());
+        gc1.setExitSum(100000);
+        System.out.println(gc1.getSumOfAccount());
+        BusinessCard bc1 = new BusinessCard("Davit", "Arzumanyan", "HH, Syuniq", 100000000);
+        bc1.setCreditSum(true);
+        System.out.println(bc1.getCreditSum());
+        bc1.setCreditSum(true);
+        System.out.println(bc1.getCreditSum());
     }
 }
