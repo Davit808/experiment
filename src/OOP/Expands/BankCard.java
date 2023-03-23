@@ -3,41 +3,52 @@ package OOP.Expands;
 public class BankCard {
     private Person infoOfUser;
     private int accountNumber;
+    private String expirationYear;
     private int sumOfAccount;
-    private int exitSum;
-    private int outputBalance;
-    private int inputOfAccount;
-    private static int sumAllAccount = 1;
+    private int onlinePayment;
+    private static int sumAllAccount = 1; // 0000.0000.0000.0001 ... I will receive it in this form tomorrow :D
 
-    BankCard(Person infoOfUser, int sumOfAccount) {
+    BankCard(Person infoOfUser, int mount, int year) {
         this.infoOfUser = infoOfUser;
-        if (sumOfAccount >= 0 || sumOfAccount < 100000000) {
-            this.sumOfAccount = sumOfAccount;
-        } else if (sumOfAccount > 100000000) {
-            System.out.println("This card doesn't have this count sum");
-            this.sumOfAccount = 100000000;
+        if ((mount > 0 || mount < 13) && (year > 2023 || year < 2030)) {
+            expirationYear = String.valueOf(mount) + "/" + String.valueOf(year);
+        } else {
+            System.out.println("It's a bad data for card");
+            System.exit(1);
         }
         accountNumber = sumAllAccount++;
     }
 
-    public void setExitSum(int sum) {
-        if (sum > sumOfAccount) {
-            System.out.println("You don't have that count sum for your balance");
-            System.exit(1);
-        } else if (sum <= 0) {
-            System.out.println("it's a bad data tape");
-            System.exit(1);
-        }
-        sumOfAccount -= sum;
-    }
-
     public void setInputOfAccount(int inputOfAccount) {
-        if (inputOfAccount + sumOfAccount <= 100000000) {
+        if (inputOfAccount + sumOfAccount <= 1000000) {
             this.sumOfAccount += inputOfAccount;
         } else {
             System.out.println("You can't have that count sum for your account");
-            System.exit(1);
         }
+    }
+
+    public void setExitSum(int sum) {
+        if (sum > sumOfAccount) {
+            System.out.println("Your balance is " + sumOfAccount + "\nYou don't have that count sum for your balance");
+        } else if (sum <= 0) {
+            System.out.println("it's a bad data tape");
+        } else {
+            sumOfAccount -= sum;
+        }
+    }
+
+    public void setOnlinePayment(int onlinePayment) {
+        if (onlinePayment > sumOfAccount) {
+            System.out.println("Your balance is " + sumOfAccount + "\nYou don't have that count sum for your balance");
+        } else if (onlinePayment <= 0) {
+            System.out.println("it's a bad data tape");
+        } else {
+            sumOfAccount -= onlinePayment;
+        }
+    }
+
+    public void sout() {
+        System.out.println("You can't using this function");
     }
 
     public int getSumOfAccount() {
@@ -46,5 +57,13 @@ public class BankCard {
 
     public int getAccountNumber() {
         return accountNumber;
+    }
+
+    public Person getInfoOfUser() {
+        return infoOfUser;
+    }
+
+    public String getExpirationYear() {
+        return expirationYear;
     }
 }
