@@ -14,7 +14,8 @@ public class Teacher {
         if (salary >= 65000 && salary <= 120000) {
             this.salary = salary;
         } else {
-            this.salary = 120000;
+            System.out.println("It's a invalid input data");
+            System.exit(1);
         }
     }
     public double getSalary() {
