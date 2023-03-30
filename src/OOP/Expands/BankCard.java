@@ -47,10 +47,6 @@ public class BankCard {
         }
     }
 
-    public void sout() {
-        System.out.println("You can't using this function");
-    }
-
     public int getSumOfAccount() {
         return sumOfAccount;
     }

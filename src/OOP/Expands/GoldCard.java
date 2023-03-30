@@ -26,11 +26,8 @@ public class GoldCard extends BankCard {
     }
 
     @Override
-    public void sout() {
-        System.out.println(this.getInfoOfUser().getName());
-        System.out.println(this.getAccountNumber());
-        System.out.println(this.getExpirationYear());
-        System.out.println(type);
+    public String toString() {
+        return this.getInfoOfUser().getName() + "\n" + this.getAccountNumber() + "\n" + this.getExpirationYear() + "\n" + type;
     }
 
     public double getAllowanceForLaunch() {

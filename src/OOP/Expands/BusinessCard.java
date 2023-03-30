@@ -37,15 +37,13 @@ public class BusinessCard extends BankCard {
     }
 
     @Override
-    public void sout() {
-        System.out.println(this.getInfoOfUser().getName());
-        System.out.println(this.getAccountNumber());
-        System.out.println(this.getExpirationYear());
-        System.out.println(type);
+    public String toString() {
+        return this.getInfoOfUser().getName() + "\n" + this.getAccountNumber() + "\n" + this.getExpirationYear() + "\n" + type;
     }
 
     @Override
     public int getSumOfAccount() {
+        System.out.println(sumOfAccount);
         return this.sumOfAccount;
     }
 }
