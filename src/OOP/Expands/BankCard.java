@@ -4,7 +4,7 @@ public class BankCard {
     private Person infoOfUser;
     private int accountNumber;
     private String expirationYear;
-    private int sumOfAccount;
+    private int sumOfAccount = 1000000;
     private int onlinePayment;
     private static int sumAllAccount = 1; // 0000.0000.0000.0001 ... I will receive it in this form tomorrow :D
 
@@ -29,7 +29,7 @@ public class BankCard {
 
     public void setExitSum(int sum) {
         if (sum > sumOfAccount) {
-            System.out.println("Your balance is " + sumOfAccount + "\nYou don't have that count sum for your balance");
+            System.out.println("bbb You don't have that count sum for your balance");
         } else if (sum <= 0) {
             System.out.println("it's a bad data tape");
         } else {
