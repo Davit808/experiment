@@ -15,6 +15,7 @@ public class Main {
         Electronics laptop2 = new Laptop("Laptop", "HP", "HP-001", 235000, 287000, 32);
         Headphones hp1 = new Headphones("Headphones", "HP", "hp-001", 1500, 2200, true);
         Electronics hp2 = new Headphones("Headphones", "IP", "IP-002", 3200, 4500, 1.5);
+
         ElectronicsStore shop = new ElectronicsStore(new Electronics[] {phone1, phone2, tv1, tv2, laptop2, tablet1, tablet2, hp1, hp2}, "Davit808");
 
         BankCard bc1 = new BusinessCard("Davit", "Arzumanyan", "HH, Syuniq", 5, 2026);
