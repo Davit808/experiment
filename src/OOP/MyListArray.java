@@ -6,7 +6,7 @@ import Arrays.doubleArray;
 import java.util.Arrays;
 
 public class MyListArray<E> {
-    private Object[] firstArray = new Object[5];
+    private Object[] firstArray = new Object[3];
     private int length = 0;
 
     private Object[] copyArr() {
@@ -48,7 +48,16 @@ public class MyListArray<E> {
     }
 
     public void add(int index, E element) {
-        if (firstArray[firstArray.length - 1] != null) {
+        if (index >= firstArray.length) {
+            try {
+
+            } catch (IndexOutOfBoundsException e) {
+                firstArray = copyArr();
+            } finally {
+                System.out.println("Index " + index + " does not exit");
+            }
+            add(element);
+        } else if (firstArray[firstArray.length - 1] != null) {
             firstArray = copyArr();
             for (int i = firstArray.length - 6, j = firstArray.length - 5; i >= index; i--, j--) {
                 firstArray[j] = firstArray[i];
@@ -73,10 +82,20 @@ public class MyListArray<E> {
     }
 
     public void remove(int index) {
-        firstArray[index] = null;
-        for (int i = index + 1; i < firstArray.length; i++) {
-            firstArray[index] = firstArray[i];
-            index++;
+        if (index >= firstArray.length) {
+            try {
+                firstArray[index] = null;
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println(length());
+            } finally {
+                System.out.println("Length List Array is " + length);
+            }
+        } else {
+            firstArray[index] = null;
+            for (int i = index + 1; i < firstArray.length; i++) {
+                firstArray[index] = firstArray[i];
+                index++;
+            }
         }
     }
 
