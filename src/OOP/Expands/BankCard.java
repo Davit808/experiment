@@ -6,6 +6,7 @@ public class BankCard {
     private String expirationYear;
     private int sumOfAccount = 1000000;
     private int onlinePayment;
+
     private static int sumAllAccount = 1; // 0000.0000.0000.0001 ... I will receive it in this form tomorrow :D
 
     BankCard(Person infoOfUser, int mount, int year) {

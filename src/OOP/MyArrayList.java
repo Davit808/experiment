@@ -37,6 +37,7 @@ public class MyArrayList {
         }
         System.out.println(arr2);
     }
+
 //      Question 3
 //    public static <E> ArrayList<E> returnElements(ArrayList<E> arrayList) {
 //        ArrayList<E> sublist = new ArrayList<>();
